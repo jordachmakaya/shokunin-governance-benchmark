@@ -1,0 +1,28 @@
+{
+  "name": "shokunin-benchmarks",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "foundation:check": "node .shokunin/scripts/gates/check-foundation.mjs",
+    "hooks:test": "node --test .shokunin/hooks/tests/*.test.mjs",
+    "hooks:materialize:check": "node .shokunin/scripts/hook-materializers/materialize-hooks.mjs --check",
+    "hooks:materialize": "node .shokunin/scripts/hook-materializers/materialize-hooks.mjs --apply",
+    "pretypecheck": "pnpm --filter @shokunin/core build",
+    "typecheck": "tsc --noEmit",
+    "test:core": "pnpm --filter @shokunin/core test",
+    "test:benchmark-kit": "pnpm --filter @shokunin/benchmark-kit test",
+    "test:evals": "pnpm --filter @shokunin/evals test",
+    "test:cli": "pnpm --filter @shokunin/benchmark-cli test",
+    "test": "pnpm foundation:check && pnpm hooks:test && pnpm typecheck && pnpm test:core && pnpm test:benchmark-kit && pnpm test:evals && pnpm test:cli"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "typescript": "5.9.2",
+    "zod": "4.1.5"
+  }
+}

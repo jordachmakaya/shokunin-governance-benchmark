@@ -1,0 +1,1 @@
+{"$schema":"shokunin-g3-redteam-review/v1","verdict":"PASS","reviewer":"agy","reviewedCommit":"d167617","checks":{"metadataContract":"PASS","attritionMissingPairs":"PASS","bcaDefensiveValidation":"PASS","recoveryDenominator":"PASS","tests":"PASS","typecheck":"PASS","migrationReview":"PASS"}}

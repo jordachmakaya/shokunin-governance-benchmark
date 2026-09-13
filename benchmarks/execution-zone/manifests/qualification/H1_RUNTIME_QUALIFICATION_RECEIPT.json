@@ -1,0 +1,60 @@
+{
+  "$schema": "shokunin-h1-runtime-qualification-receipt/v1",
+  "status": "PASS",
+  "probeKind": "NON_PILOT_CAPABILITY_ONLY",
+  "runtime": {
+    "runtimeId": "codex",
+    "runtimeVersion": "0.154.0",
+    "model": "openai/gpt-5-mini",
+    "nativeStopSignal": "clean-agent-return",
+    "claimExtractionMethod": "bridge claim.json from awaited native clean return",
+    "sessionResumeSupported": true,
+    "structuredFeedbackSupported": true,
+    "usageTelemetrySupported": true,
+    "trajectoryFormat": "Harbor Codex trajectory.json",
+    "adapterVersion": "1.0.0-r8.3"
+  },
+  "observed": {
+    "harborTrialId": "243c410e-50f1-44eb-bad9-68867bf5e7e1",
+    "recoveryCount": 1,
+    "recoverySuccessful": true,
+    "inputTokens": 26724,
+    "outputTokens": 3346,
+    "claimCount": 1,
+    "finalGateVerdict": "PASS",
+    "distribution": "wheel-verified"
+  },
+  "artifacts": {
+    "claim": {
+      "path": "benchmarks/execution-zone/raw-results/qualification/jobs/runtime-qualification-codex-a3-3a1505a479d6/cancel-async-tasks__Z3iQLnW/claim.json",
+      "sha256": "c5bc94e6ecb365bb4c96bb255347749f29e3131a61db40134279f4c44c1f9fbe",
+      "bytes": 120
+    },
+    "recovery": {
+      "path": "benchmarks/execution-zone/raw-results/qualification/jobs/runtime-qualification-codex-a3-3a1505a479d6/cancel-async-tasks__Z3iQLnW/recovery-events.json",
+      "sha256": "dcfb4a904b641bc8fdea76edcc3e8f61dab37dea715ac21fe998cf602fa9cefe",
+      "bytes": 241
+    },
+    "gate": {
+      "path": "benchmarks/execution-zone/raw-results/qualification/jobs/runtime-qualification-codex-a3-3a1505a479d6/cancel-async-tasks__Z3iQLnW/gate-verdict.json",
+      "sha256": "6297c746a70491966f2dcc212231b3ca968c3d2bba455f11d739897fef0f0931",
+      "bytes": 764
+    },
+    "trajectory": {
+      "path": "benchmarks/execution-zone/raw-results/qualification/jobs/runtime-qualification-codex-a3-3a1505a479d6/cancel-async-tasks__Z3iQLnW/agent/trajectory.json",
+      "sha256": "c68b27cdaa69ac2d7e0d6a62e34e2af1d849a10a502266ca8c558d3316d857d5",
+      "bytes": 13944
+    },
+    "result": {
+      "path": "benchmarks/execution-zone/raw-results/qualification/jobs/runtime-qualification-codex-a3-3a1505a479d6/cancel-async-tasks__Z3iQLnW/result.json",
+      "sha256": "dfcaf9df659a59fe9ea4909771e548c460b8a78a2e824df51c86c4f5acc400ef",
+      "bytes": 3258
+    }
+  },
+  "authorities": {
+    "harborWheelSha256": "1478347edbfcc1ced2122815a67392dada4a40d715972a2e5a280858d457b7a5",
+    "officialHarborWheelSha256": "1478347edbfcc1ced2122815a67392dada4a40d715972a2e5a280858d457b7a5",
+    "bridgeSha256": "db2c4477d8460715375fc8ca2d89301e9f8b766e3ad948faae1399d65f9e5bed",
+    "containerDigest": "sha256:760c5426807dc80edd6a1b1c3675c197599fc3f9cb46b1a06e7539cb94818553"
+  }
+}

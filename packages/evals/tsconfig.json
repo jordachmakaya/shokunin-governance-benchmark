@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "paths": {
+      "@shokunin/benchmark-kit": [
+        "../benchmark-kit/dist/src/index.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "contracts/**/*.ts",
+    "schemas/**/*.ts",
+    "src/**/*.ts",
+    "tests/**/*.ts"
+  ]
+}

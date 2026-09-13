@@ -1,0 +1,64 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SHOKUNIN_BENCHMARK_MANAGED_HOOK=1 sh -c 'cursor=\"$PWD\"; while [ \"$cursor\" != \"/\" ]; do if [ -f \"$cursor/.shokunin/BENCHMARK_REPO.json\" ]; then exec node \"$cursor/.shokunin/hooks/runners/run-event.mjs\" --event \"$1\" --actor \"$2\"; fi; cursor=\"${cursor%/*}\"; [ -n \"$cursor\" ] || cursor=\"/\"; done; exit 0' sh 'repo:session-open' 'claude-code'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Write|Edit|MultiEdit|NotebookEdit|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SHOKUNIN_BENCHMARK_MANAGED_HOOK=1 sh -c 'cursor=\"$PWD\"; while [ \"$cursor\" != \"/\" ]; do if [ -f \"$cursor/.shokunin/BENCHMARK_REPO.json\" ]; then exec node \"$cursor/.shokunin/hooks/runners/run-event.mjs\" --event \"$1\" --actor \"$2\"; fi; cursor=\"${cursor%/*}\"; [ -n \"$cursor\" ] || cursor=\"/\"; done; exit 0' sh 'repo:pre-action' 'claude-code'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|Write|Edit|MultiEdit|NotebookEdit|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SHOKUNIN_BENCHMARK_MANAGED_HOOK=1 sh -c 'cursor=\"$PWD\"; while [ \"$cursor\" != \"/\" ]; do if [ -f \"$cursor/.shokunin/BENCHMARK_REPO.json\" ]; then exec node \"$cursor/.shokunin/hooks/runners/run-event.mjs\" --event \"$1\" --actor \"$2\"; fi; cursor=\"${cursor%/*}\"; [ -n \"$cursor\" ] || cursor=\"/\"; done; exit 0' sh 'repo:post-action' 'claude-code'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SHOKUNIN_BENCHMARK_MANAGED_HOOK=1 sh -c 'cursor=\"$PWD\"; while [ \"$cursor\" != \"/\" ]; do if [ -f \"$cursor/.shokunin/BENCHMARK_REPO.json\" ]; then exec node \"$cursor/.shokunin/hooks/runners/run-event.mjs\" --event \"$1\" --actor \"$2\"; fi; cursor=\"${cursor%/*}\"; [ -n \"$cursor\" ] || cursor=\"/\"; done; exit 0' sh 'repo:zone-seal' 'claude-code'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "SHOKUNIN_BENCHMARK_MANAGED_HOOK=1 sh -c 'cursor=\"$PWD\"; while [ \"$cursor\" != \"/\" ]; do if [ -f \"$cursor/.shokunin/BENCHMARK_REPO.json\" ]; then exec node \"$cursor/.shokunin/hooks/runners/run-event.mjs\" --event \"$1\" --actor \"$2\"; fi; cursor=\"${cursor%/*}\"; [ -n \"$cursor\" ] || cursor=\"/\"; done; exit 0' sh 'repo:session-end' 'claude-code'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

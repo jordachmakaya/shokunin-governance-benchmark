@@ -1,0 +1,7 @@
+{
+  "id": "malformed-empty-rewards",
+  "task_name": "oracle-task",
+  "verifier_result": {
+    "rewards": {}
+  }
+}

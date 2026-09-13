@@ -1,0 +1,41 @@
+{
+  "$schema": "shokunin-active-assignments/v1",
+  "version": "1.0.0",
+  "phase": "P3_H1_PILOT_READY",
+  "gateRequiredForParallelWork": "G4_PUBLIC_API_STABLE",
+  "sharedFileOwner": "codex",
+  "sealedZones": ["ZB0", "ZB1", "ZB2", "ZB3", "ZB5_COPY_VERIFIED", "ZB6"],
+  "assignments": [
+    {
+      "actor": "gemini",
+      "zoneId": null,
+      "status": "REVIEW_ONLY",
+      "writeRoots": [],
+      "writeFiles": []
+    },
+    {
+      "actor": "codex",
+      "model": "codex",
+      "zoneId": "ZB6",
+      "status": "ACTIVE",
+      "writeRoots": ["apps/benchmark-cli"],
+      "writeFiles": []
+    },
+    {
+      "actor": "claude-code",
+      "model": "claude-sonnet",
+      "zoneId": null,
+      "status": "REVIEW_ONLY",
+      "writeRoots": [],
+      "writeFiles": []
+    },
+    {
+      "actor": "buffy",
+      "model": "mimo-v2.5",
+      "zoneId": null,
+      "status": "REVIEW_ONLY",
+      "writeRoots": [],
+      "writeFiles": []
+    }
+  ]
+}

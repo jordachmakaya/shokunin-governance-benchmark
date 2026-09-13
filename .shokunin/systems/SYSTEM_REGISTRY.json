@@ -1,0 +1,89 @@
+{
+  "$schema": "shokunin-boxed-systems/v1",
+  "version": "1.0.0",
+  "systems": [
+    {
+      "id": "ZB0",
+      "name": "foundation-and-repository-governance",
+      "root": ".shokunin",
+      "writeRoots": [".shokunin", "docs"],
+      "publicRoots": ["docs"],
+      "dependsOn": []
+    },
+    {
+      "id": "ZB1",
+      "name": "governance-core",
+      "root": "packages/core",
+      "writeRoots": ["packages/core"],
+      "publicRoots": ["packages/core/contracts", "packages/core/schemas"],
+      "dependsOn": ["G0_FOUNDATION_FROZEN"]
+    },
+    {
+      "id": "ZB2",
+      "name": "harbor-runtime-and-evidence",
+      "root": "packages/benchmark-kit",
+      "writeRoots": ["packages/benchmark-kit"],
+      "publicRoots": ["packages/benchmark-kit/contracts", "packages/benchmark-kit/schemas"],
+      "dependsOn": ["G0_FOUNDATION_FROZEN"]
+    },
+    {
+      "id": "ZB3",
+      "name": "evaluation-and-statistics",
+      "root": "packages/evals",
+      "writeRoots": ["packages/evals"],
+      "publicRoots": ["packages/evals/contracts", "packages/evals/schemas"],
+      "dependsOn": ["G1_RUNTIME_CONTRACT_STABLE"]
+    },
+    {
+      "id": "ZB4",
+      "name": "telemetry",
+      "root": "packages/telemetry",
+      "writeRoots": ["packages/telemetry"],
+      "publicRoots": ["packages/telemetry/contracts"],
+      "dependsOn": ["G1_RUNTIME_CONTRACT_STABLE"]
+    },
+    {
+      "id": "ZB5",
+      "name": "h1-experiment-definitions",
+      "root": "benchmarks/execution-zone",
+      "writeRoots": [
+        "benchmarks/execution-zone/hypotheses",
+        "benchmarks/execution-zone/experiments",
+        "benchmarks/execution-zone/executors",
+        "benchmarks/execution-zone/source-snapshots",
+        "benchmarks/execution-zone/manifests"
+      ],
+      "publicRoots": [],
+      "dependsOn": ["G2A_Z5_SOURCE_SELECTION_FROZEN"]
+    },
+    {
+      "id": "ZB6",
+      "name": "operator-cli",
+      "root": "apps/benchmark-cli",
+      "writeRoots": ["apps/benchmark-cli"],
+      "publicRoots": ["apps/benchmark-cli/contracts"],
+      "dependsOn": ["G3_EVAL_PIPELINE_STABLE"]
+    },
+    {
+      "id": "ZB7",
+      "name": "publication-boundary",
+      "root": "public",
+      "writeRoots": ["public"],
+      "publicRoots": ["public"],
+      "dependsOn": ["G4_PUBLIC_API_STABLE"]
+    },
+    {
+      "id": "ZB8",
+      "name": "benchmark-mcp-read-only",
+      "root": "apps/benchmark-mcp",
+      "writeRoots": ["apps/benchmark-mcp"],
+      "publicRoots": ["apps/benchmark-mcp/contracts", "apps/benchmark-mcp/schemas"],
+      "dependsOn": ["G5_PUBLIC_BUNDLE_SCHEMA_STABLE"]
+    }
+  ],
+  "runtimeOutputRoots": [
+    "benchmarks/execution-zone/raw-results",
+    "benchmarks/execution-zone/normalized-results",
+    "benchmarks/execution-zone/reports"
+  ]
+}

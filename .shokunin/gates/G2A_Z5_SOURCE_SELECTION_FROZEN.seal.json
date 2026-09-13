@@ -1,0 +1,58 @@
+{
+  "$schema": "shokunin-gate-seal/v1",
+  "gateId": "G2A_Z5_SOURCE_SELECTION_FROZEN",
+  "verdict": "PASS",
+  "sealedZone": "Z5-S0_SOURCE_SELECTION",
+  "sealedAt": "2026-09-10T11:15:00.000Z",
+  "integrationOwner": "codex",
+  "sourceCurator": "codex",
+  "source": {
+    "commit": "f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81",
+    "tree": "be22243235020b472d5785afbbc475289029afb8",
+    "commitKind": "CURATION_FREEZE_COMMIT_SELECTED_SURFACE",
+    "originalAuthoringCommit": null,
+    "fullRootObservationSha256": "74b9dadad39b5d2db9a0aadd65f007dee81033098bb963909db62ef022170ead",
+    "bundleSha256": "e4e02fbf56d356bef71564263b72b7da0bd14810e69c04e4e0b6f83c6a2f922a"
+  },
+  "selection": {
+    "totalEntries": 185,
+    "copyExact": 16,
+    "adapt": 7,
+    "referenceOnly": 87,
+    "exclude": 75,
+    "selectedFilesRehashed": 23,
+    "selectedFilesRehashedVerdict": "PASS",
+    "excludedFilesInBundle": 0
+  },
+  "externalCurationEvidence": {
+    "root": "shokunin-harness/cli_Benchmark/z5-source-selection",
+    "allowlistSha256": "44040f8ac3be05999bc4910d19aba80602649b4c7848aa1c43b711c51dd1e88b",
+    "scanSha256": "26e1651d6a6c401968cac7ca9ce3ef07dd715965d11385a1f27e155c6b9751d0",
+    "freezeManifestSha256": "6e99cbf8b21be27b0932d00119a9e5b7bc6a24d84a175c6d6466ceef818048fc"
+  },
+  "license": {
+    "emittedOutputLicense": "ISC",
+    "copiedSkillOutputLicense": "ISC",
+    "rawSkillDeclarationsPreservedInPrivateAcquisition": "MIT",
+    "scopeMapVerdict": "PASS",
+    "decisionAuthority": "project-owner instruction recorded 2026-09-10"
+  },
+  "safety": {
+    "gitleaks": "8.30.1",
+    "selectedSurfaceSecretScan": "PASS",
+    "selectedSurfaceSecretsFound": 0,
+    "symlinks": 0,
+    "executableFiles": 0,
+    "runtimeDependenciesAuthorized": 0,
+    "mutableOrExcludedBytesInBundle": 0
+  },
+  "armIsolation": {
+    "A0": "NO_Z5_SOURCE_OR_TREATMENT",
+    "A1": "PASSIVE_GATE_NO_FEEDBACK_NO_RETRY",
+    "A2": "BLOCK_ONLY_NO_RECOVERY_NO_RETRY",
+    "A3": "ADAPTED_RECOVERY_POLICY_MAX_THREE_RETRIES",
+    "rawArchiveInTrialWorkspace": false
+  },
+  "unlocks": ["Z5-S1_CONTROLLED_COPY_ZB5"],
+  "doesNotUnlock": ["G2B_Z5_COPY_VERIFIED", "G3_EVAL_PIPELINE_STABLE", "REAL_H1_PILOT"]
+}

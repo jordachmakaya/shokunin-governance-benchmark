@@ -1,0 +1,63 @@
+{
+  "$schema": "shokunin-h1-runtime-migration/v1",
+  "status": "RESEALED",
+  "recordedAt": "2026-09-12T20:54:56Z",
+  "baseCommit": "dc012cf79f8471d5ce7f620411b245c5c101b7e9",
+  "integrationOwner": "codex",
+  "userAuthorizedIntegrationWindow": true,
+  "authorizationScope": "Explicit bounded reopening of sealed ZB2 and promotion of the tested H1 gate transcript, Harbor-oracle recovery semantics, H1 executor, and runtime manifests; no pilot launch was authorized by this receipt.",
+  "invalidatedPriorSeals": [
+    "G2_CORE_RUNTIME_INTEGRATED",
+    "G3_EVAL_PIPELINE_STABLE",
+    "G4_PUBLIC_API_STABLE"
+  ],
+  "changedZones": ["ZB2", "ZB3", "ZB5", "ZB6"],
+  "scientificCorrections": [
+    "Persist complete sanitized per-check gate transcripts.",
+    "Preserve observed token and cost telemetry for blocked trials.",
+    "Define recovery success as at least one A3 retry followed by a passing terminal native Harbor verifier; gate convergence alone is insufficient.",
+    "Retain exhausted A3 attempts in the recovery-rate denominator even when they are governance attrition for primary efficacy.",
+    "Replace the H1 placeholder with a one-native-trial executor using frozen public task metadata, explicit export surfaces, and task-specific public-contract checks.",
+    "Bind runtime qualification, internal executable bytes, Node, bridge, wheel, model, and ten per-task OCI RepoDigests before pilot launch."
+  ],
+  "quarantinedEvidence": {
+    "historicalA1A2": "INTERNAL_SMOKE_INVALID_FOR_EFFICACY",
+    "reason": "Scratch execution bypassed the canonical executor and carried contradictory model identity; those records remain non-publishable.",
+    "freshCancelAsyncTaskSmokes": "INTERNAL_DIAGNOSTIC_ONLY",
+    "latestObservation": "A3 gate converged after two retries but Harbor reward remained 0; this exposed both an incomplete public check and the recoverySuccessful measurement defect."
+  },
+  "qualification": {
+    "status": "PASS",
+    "kind": "NON_PILOT_CAPABILITY_ONLY",
+    "runtime": "codex@0.154.0",
+    "model": "openai/gpt-5-mini",
+    "receiptPath": "benchmarks/execution-zone/manifests/qualification/H1_RUNTIME_QUALIFICATION_RECEIPT.json",
+    "receiptSha256": "244d037b94e8e810d5cde3190582a1215790d20d3674031338afc411cc498408"
+  },
+  "validation": {
+    "rootSuite": "PASS",
+    "foundation": "PASS",
+    "hooks": { "passed": 14, "failed": 0 },
+    "core": { "passed": 17, "failed": 0 },
+    "benchmarkKit": { "passed": 116, "failed": 0 },
+    "evals": { "passed": 41, "failed": 0 },
+    "cli": { "passed": 5, "failed": 0 },
+    "h1Executor": { "passed": 5, "failed": 0 },
+    "realContainerHostWitness": "PASS",
+    "diffCheck": "PASS"
+  },
+  "review": {
+    "reviewArtifact": ".shokunin/gates/H1_RUNTIME_MIGRATION_REVIEW.json",
+    "reviewer": "agy",
+    "verdict": "PASS",
+    "reviewedCommit": "22cf54a47a4134deadd373b02281c04b8726861b",
+    "mediumAccepted": "dist is ignored; runtime manifest mismatch fails closed"
+  },
+  "pilotStatus": "PILOT_ABORTED_BEFORE_VALID_TRIAL; PINNING_CORRECTION_REQUIRED",
+  "postResealFinding": {
+    "status": "CORRECTED",
+    "observation": "The first canonical launch failed closed before a valid trial because this Harbor host exposed local imageId rather than the pinned RepoDigest.",
+    "correction": "All ten frozen pins now use sha256-prefixed local image IDs, which the bridge and runtime receipt both expose and verify.",
+    "invalidTrial": "quarantined; zero publishable trial records"
+  }
+}

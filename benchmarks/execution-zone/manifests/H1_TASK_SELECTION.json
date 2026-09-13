@@ -1,0 +1,12 @@
+[
+  {"id":"cancel-async-tasks","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"configure-git-webserver","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"fix-code-vulnerability","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"git-leak-recovery","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"large-scale-text-editing","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"pypi-server","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"query-optimize","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"git-multibranch","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"sqlite-db-truncate","benchmark":"terminal-bench","version":"2.1.0"},
+  {"id":"db-wal-recovery","benchmark":"terminal-bench","version":"2.1.0"}
+]

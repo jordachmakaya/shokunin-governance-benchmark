@@ -1,0 +1,84 @@
+#!/bin/bash
+set -euo pipefail
+
+PODMAN_BIN="${SHOKUNIN_PODMAN_BIN:-}"
+UVX_BIN="${SHOKUNIN_UVX_BIN:-}"
+PODMAN_BIN="${PODMAN_BIN:-$(command -v podman || true)}"
+UVX_BIN="${UVX_BIN:-$(command -v uvx || true)}"
+
+if [[ -z "$PODMAN_BIN" || -z "$UVX_BIN" ]]; then
+  echo "podman and uvx are required for the Harbor Podman compatibility layer" >&2
+  exit 127
+fi
+
+if [[ "${1:-}" != "compose" ]]; then
+  exec "$PODMAN_BIN" "$@"
+fi
+
+shift
+compose_args=("$@")
+project=""
+
+# Harbor's Docker compose invocation uses long Docker-specific flags that
+# podman-compose 1.6 does not accept. Normalize only those structural flags;
+# preserve the compose files and lifecycle command verbatim.
+normalized_args=()
+skip_next=0
+for ((i = 0; i < ${#compose_args[@]}; i++)); do
+  if (( skip_next )); then
+    skip_next=0
+    continue
+  fi
+  case "${compose_args[$i]}" in
+    --project-name)
+      normalized_args+=("-p" "${compose_args[$((i + 1))]:-}")
+      skip_next=1
+      ;;
+    --project-directory)
+      # podman-compose resolves relative -f paths from its current directory;
+      # Harbor supplies absolute paths, so this Docker-only flag is redundant.
+      skip_next=1
+      ;;
+    --remove-orphans|--rmi|local|--volumes)
+      # Cleanup-only Docker flags have no portable podman-compose equivalent.
+      ;;
+    *) normalized_args+=("${compose_args[$i]}") ;;
+  esac
+done
+compose_args=("${normalized_args[@]}")
+
+for ((i = 0; i < ${#compose_args[@]}; i++)); do
+  if [[ "${compose_args[$i]}" == "-p" ]]; then
+    project="${compose_args[$((i + 1))]:-}"
+  fi
+
+  if [[ "${compose_args[$i]}" == "cp" ]]; then
+    source_path="${compose_args[$((i + 1))]:-}"
+    target_path="${compose_args[$((i + 2))]:-}"
+    if [[ -z "$project" || -z "$source_path" || -z "$target_path" ]]; then
+      echo "invalid docker compose cp invocation" >&2
+      exit 2
+    fi
+    source_path="${source_path/#main:/${project}_main_1:}"
+    target_path="${target_path/#main:/${project}_main_1:}"
+    exec "$PODMAN_BIN" cp "$source_path" "$target_path"
+  fi
+
+  if [[ "${compose_args[$i]}" == "exec" ]]; then
+    podman_exec_args=("exec")
+    for ((j = i + 1; j < ${#compose_args[@]}; j++)); do
+      current="${compose_args[$j]}"
+      if [[ "$current" == "-it" || "$current" == "-ti" ]]; then
+        continue
+      fi
+      if [[ "$current" == "main" ]]; then
+        podman_exec_args+=("${project}_main_1")
+      else
+        podman_exec_args+=("$current")
+      fi
+    done
+    exec "$PODMAN_BIN" "${podman_exec_args[@]}"
+  fi
+done
+
+exec "$UVX_BIN" --from "podman-compose==1.6.0" podman-compose "${compose_args[@]}"

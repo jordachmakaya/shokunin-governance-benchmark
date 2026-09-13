@@ -1,0 +1,6 @@
+# Pinned upstream validation requirements for Harbor 0.1.2 fixture verification
+# Vendored wheel: vendor/harbor-0.1.2-py3-none-any.whl
+# Wheel SHA-256: 1478347edbfcc1ced2122815a67392dada4a40d715972a2e5a280858d457b7a5
+vendor/harbor-0.1.2-py3-none-any.whl
+pydantic==2.13.5
+pyyaml==6.0.3

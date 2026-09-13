@@ -1,0 +1,264 @@
+{
+  "schema": "shokunin.z5-copy-receipt/v1",
+  "status": "COMPLETE",
+  "createdAt": "2026-09-10T12:00:00Z",
+  "correctedAt": "2026-09-10T13:00:00Z",
+  "implementer": "buffy (mimo-v2.5)",
+  "implementerRole": "Copy Implementer ZB5",
+  "gateAcquired": {
+    "id": "G2A_Z5_SOURCE_SELECTION_FROZEN",
+    "status": "PASS",
+    "benchmarkCommit": "2413a8674c5abe34a95a1e42b15ad1c0ebb77c6c",
+    "acquisitionCommit": "f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81"
+  },
+  "source": {
+    "bundle": "cli_Benchmark/z5-source-selection/Z5_SOURCE_FREEZE.bundle",
+    "bundleSha256": "e4e02fbf56d356bef71564263b72b7da0bd14810e69c04e4e0b6f83c6a2f922a",
+    "sourceCommit": "f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81",
+    "sourceObservationSha256": "74b9dadad39b5d2db9a0aadd65f007dee81033098bb963909db62ef022170ead",
+    "sourceCommitKind": "CURATION_FREEZE_COMMIT_SELECTED_SURFACE"
+  },
+  "classificationCounts": {
+    "COPY_EXACT": 16,
+    "ADAPT": 7,
+    "REFERENCE_ONLY_omitted": 87,
+    "EXCLUDE_omitted": 75,
+    "totalEmitted": 23,
+    "totalOmitted": 162
+  },
+  "outputLicense": "ISC",
+  "licenseScope": "cli_Benchmark/z5-source-selection/LICENSE_SCOPE.md",
+  "verification": {
+    "copyExactSha256Equality": "PASS",
+    "copyExactFilesMatched": 16,
+    "transformDeterminism": "PASS",
+    "determinismProof": "All 7 adapted files recomputed from disk produce identical SHA-256 hashes.",
+    "noReferenceOnlyOrExclude": "PASS",
+    "noSecrets": "PASS",
+    "noSymlinks": "PASS",
+    "noHooks": "PASS",
+    "noRuntimeDependencies": "PASS",
+    "absoluteMachinePathScan": "PASS",
+    "a0SourceAbsence": "PASS",
+    "a1PassiveNoFeedback": "PASS",
+    "a2BlockingNoRetry": "PASS",
+    "a3RecoveryMaxThreeRetries": "PASS",
+    "rawArchiveNeverInHarbor": "PASS",
+    "gitDiffCheck": {
+      "status": "PASS_WITH_JUSTIFICATION",
+      "adaptedFiles": "CLEAN — zero trailing whitespace, zero final blank line issues",
+      "copyExactFiles": "10 trailing whitespace occurrences across 4 files in raw/ — preserved byte-for-byte from source per COPY_EXACT contract. The source commit f59fd00 itself contains these trailing spaces; modifying them would break SHA-256 equality. git diff --check failure for COPY_EXACT is expected and correct.",
+      "ctoTestMjsEofBlankLine": "Preserved from source — byte-for-byte copy requires exact content including trailing newline."
+    },
+    "cleanupReceipt": {
+      "status": "CORRECTED",
+      "tempDirectoryCleaned": true,
+      "harborTempDirRemoved": "/tmp/harbor-real-host-gate-Kkky8Y — cleaned at correction time",
+      "residueCount": 0,
+      "observedAtCorrection": "2026-09-10T13:00:00Z"
+    }
+  },
+  "armIsolation": {
+    "A0_baseline": "No Z5 source, adapted policy, gate evaluation, block, feedback, or retry.",
+    "A1_observing": "Common Measurement Plane plus passive CompletionGate evaluation; no Z5 feedback or retry.",
+    "A2_blocking": "Blocking verdict only; no Z5 recovery policy and no retry.",
+    "A3_recovering": "May consume only the adapted runtime-neutral recovery/quality policy; maximum three retries.",
+    "invariant": "Raw COPY_EXACT archive files never enter any Harbor workspace or prompt in A0-A3."
+  },
+  "entries": [
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/docs/z5_deterministic_job_receipts_and_lightweight_execution.md",
+      "sourceSha256": "f486c10c16b4c1b679b4068a11f4e829a48027e9156ed799f1806a1159b00b26",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/docs/z5_deterministic_job_receipts_and_lightweight_execution.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/docs/z5_execution_and_tdd_lifecycle.md",
+      "sourceSha256": "76cffd9c4fab429a74dfd079f7d5ea8d05438638e4482c10eab7cc9ce3f2a0d9",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/docs/z5_execution_and_tdd_lifecycle.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/docs/z5_process_deep_dive_and_state_machines.md",
+      "sourceSha256": "fea7f64d12b3143c1ead93f5a534fcf91599577ec7b534574d4ca77714496635",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/docs/z5_process_deep_dive_and_state_machines.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/docs/z5_subagents_and_delegation_protocols.md",
+      "sourceSha256": "90caaec9168c08cdbafc72a5980dfd08051b7134f9581e360c758a17feba64c5",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/docs/z5_subagents_and_delegation_protocols.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/rules/RULE_TypeScript.md",
+      "sourceSha256": "ae96b4ab232766822191c392563b208b35dca17cc4919c8cffa78bbbba512974",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/rules/RULE_TypeScript.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/scripts/check-error-registry.ts",
+      "sourceSha256": "42f55f7f3595b795354adbde7ce2b57879e457bb2ddacfdb3f7fdf4fadbf1f43",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/scripts/check-error-registry.ts",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/scripts/check-logic.ts",
+      "sourceSha256": "8bc8bc4c20729f00033f0a89b61b3c827a7f7098d02d025fd6adeaedbb54f771",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/scripts/check-logic.ts",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/scripts/check-typescript-rules.ts",
+      "sourceSha256": "ddfa8d13d8d7e0591bdac8eda3dbdd4a773d2c62b4902ebd2415acac9fc2b092",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/scripts/check-typescript-rules.ts",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/scripts/cto.test.mjs",
+      "sourceSha256": "b798a5cf354d9149d76043aed11add8b5e2f61bce1e82f7d6d4cc94b3d7106ce",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/scripts/cto.test.mjs",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/scripts/execution.ts",
+      "sourceSha256": "d1be135053f68b53a12d1e9c1fe1ce7d9a38dffe6710451b9a8ef73b07741cf3",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/scripts/execution.ts",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/scripts/gates/check-metrics-evidence.mjs",
+      "sourceSha256": "d0fefe746946e014685ca30f2e5fa05b74521fdb78cb1445d4a274ad386ef4a2",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/scripts/gates/check-metrics-evidence.mjs",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/scripts/scan-hardcoded.ts",
+      "sourceSha256": "2e93d80f369f733135ec5b00dbdae8c9dcfe7ecfa520bdb99df8b82733c9745c",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/scripts/scan-hardcoded.ts",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/sub-agents/bug_diagnostician_backend/AGENT.md",
+      "sourceSha256": "bc55f87fc7533dee9315d953f63eb1ae3eff9e855810e86c8ea5e3329e256a60",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/sub-agents/bug_diagnostician_backend/AGENT.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/sub-agents/coder_backend/AGENT.md",
+      "sourceSha256": "9b5bb1fa40dbcbfb84b280bde51715809dc1fd058be4a3288c26d7f2b793d236",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/sub-agents/coder_backend/AGENT.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/sub-agents/reviewer_backend/AGENT.md",
+      "sourceSha256": "46dc2387ec488f4b52ede0650d1045a56b1d1788ee555cac02264d5fff584d42",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/sub-agents/reviewer_backend/AGENT.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "COPY_EXACT",
+      "sourcePath": ".shokunin/agents/cto/sub-agents/tester_backend/AGENT.md",
+      "sourceSha256": "2179671daf3ed375eac79a2bb0e56ab3c27c6ce48792eaf487552ff34e02af32",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/raw/.shokunin/agents/cto/sub-agents/tester_backend/AGENT.md",
+      "outputLicense": "ISC",
+      "transformationId": null
+    },
+    {
+      "classification": "ADAPT",
+      "sourcePath": ".shokunin/agents/cto/AGENT.md",
+      "sourceSha256": "c14a6bdc20939b63785d1bc4e351fcd03b9fe061dfc866b7006570c53dd8e4fe",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/adapted/orchestrator-policy.md",
+      "outputLicense": "ISC",
+      "transformationId": "Z5_H1_ORCHESTRATOR_POLICY_V1",
+      "destinationSha256": "b2cb3643ad6cb854677f6031b075efeaff1e2097e745fdad07c2c7f55dcd43c9"
+    },
+    {
+      "classification": "ADAPT",
+      "sourcePath": ".shokunin/agents/cto/SOUL.md",
+      "sourceSha256": "e32f05cf71edd12598037cab218fbb313631649438164ac0b411a3295a849d4e",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/adapted/quality-values.md",
+      "outputLicense": "ISC",
+      "transformationId": "Z5_H1_QUALITY_VALUES_V1",
+      "destinationSha256": "605d7add563030606378e2bb75ec285a95f4df4e720eb0e3f8d2a7aaeb094b89"
+    },
+    {
+      "classification": "ADAPT",
+      "sourcePath": ".shokunin/agents/cto/ZONE_FORBIDDEN_TODO.md",
+      "sourceSha256": "db13548aa387270717633046b9201359c9b2fb4a2b2693b44ee2d1ca759d2587",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/adapted/forbidden-actions.md",
+      "outputLicense": "ISC",
+      "transformationId": "Z5_H1_FORBIDDEN_ACTIONS_V1",
+      "destinationSha256": "d6d6d0232447664890c5720b62cf17db42ac1cd3bf759e86d599f091b16c13cb"
+    },
+    {
+      "classification": "ADAPT",
+      "sourcePath": ".shokunin/agents/cto/processes/sprint-execution.process.json",
+      "sourceSha256": "2a22d1a4f5db7903912bc68c95acfb47a398f8995340cb47c820aa6c2bbc1531",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/adapted/completion-lifecycle.json",
+      "outputLicense": "ISC",
+      "transformationId": "Z5_H1_COMPLETION_LIFECYCLE_V1",
+      "destinationSha256": "3ae7e8cd3ed07efb01c4f98e52dcecff1a96ccfc196b4a602836c2de496dfb13"
+    },
+    {
+      "classification": "ADAPT",
+      "sourcePath": ".shokunin/agents/cto/processes/bug-resolution.process.json",
+      "sourceSha256": "c4b66a323fe1dc53aef5640b810679104d8826b48919c62ff01241d1524aee9b",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/adapted/recovery-lifecycle.json",
+      "outputLicense": "ISC",
+      "transformationId": "Z5_H1_RECOVERY_LIFECYCLE_V1",
+      "destinationSha256": "5ff631ecc849a978113054b64af0f38f06e02186eb67c99cc0fbc92f64a67058"
+    },
+    {
+      "classification": "ADAPT",
+      "sourcePath": ".shokunin/skills/execution/z5-zone-exit-audit/SKILL.md",
+      "sourceSha256": "f49d66a08fc10e6fefeb0e002ef351f75cb555218d744b29b4ee8c3c36828ca5",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/adapted/exit-evidence-policy.md",
+      "outputLicense": "ISC",
+      "transformationId": "Z5_H1_EXIT_EVIDENCE_V1",
+      "destinationSha256": "b6605e787c508895d2397741894b1a5502f0b36a479b51d3ef85ff6d0b829350"
+    },
+    {
+      "classification": "ADAPT",
+      "sourcePath": ".shokunin/skills/execution/z5-metrics-evidence/SKILL.md",
+      "sourceSha256": "501973275cb7dd828969bebd9cf24e977faffe3bbc4fe21ff40112ee5ce53428",
+      "destinationPath": "benchmarks/execution-zone/source-snapshots/z5/f59fd00ab2e5aa3e4d582bb3a0e44b73956c1b81/adapted/metrics-evidence-policy.md",
+      "outputLicense": "ISC",
+      "transformationId": "Z5_H1_METRICS_EVIDENCE_V1",
+      "destinationSha256": "787157cc9228c16c2d346b37598f0da14a9d8fe5c712616044e79ad34adf2339"
+    }
+  ],
+  "residueCount": 0,
+  "tempDirectoryCleaned": true,
+  "notes": "All 23 entries emitted under ISC license. 162 REFERENCE_ONLY/EXCLUDE entries omitted. COPY_EXACT files preserve source whitespace verbatim (10 trailing-space occurrences in 4 raw/ files) — modifying would break SHA-256 equality. Adapted files are whitespace-clean. Harbor temp directory /tmp/harbor-real-host-gate-Kkky8Y cleaned at correction time."
+}

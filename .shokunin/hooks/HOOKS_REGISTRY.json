@@ -1,0 +1,33 @@
+{
+  "$schema": "shokunin-benchmark-hooks/v1",
+  "version": "1.0.0",
+  "runtime": "node>=24",
+  "supportedClients": ["claude-code", "gemini", "codex"],
+  "executionOrder": "sequential",
+  "failFast": true,
+  "hooks": {
+    "repo:session-open": [
+      "hooks/handlers/session-open/session-open.ts"
+    ],
+    "repo:pre-action": [
+      "hooks/handlers/pre-action/write-scope-guard.ts",
+      "hooks/handlers/pre-action/public-secret-guard.ts"
+    ],
+    "repo:post-action": [
+      "hooks/handlers/post-action/development-ledger.ts"
+    ],
+    "repo:zone-seal": [
+      "hooks/handlers/zone-seal/foundation-seal.ts"
+    ],
+    "repo:session-end": [
+      "hooks/handlers/session-end/session-state.ts"
+    ]
+  },
+  "policies": {
+    "repo:session-open": { "failurePolicy": "fail-closed", "timeoutMs": 2000 },
+    "repo:pre-action": { "failurePolicy": "fail-closed", "timeoutMs": 2000 },
+    "repo:post-action": { "failurePolicy": "fail-open", "timeoutMs": 2000 },
+    "repo:zone-seal": { "failurePolicy": "fail-closed", "timeoutMs": 10000 },
+    "repo:session-end": { "failurePolicy": "fail-open", "timeoutMs": 2000 }
+  }
+}

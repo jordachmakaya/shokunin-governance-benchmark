@@ -1,0 +1,13 @@
+{
+  "id": "malformed-inverted-time",
+  "task_name": "oracle-task",
+  "agent_execution": {
+    "started_at": "2026-09-08T02:00:00.000Z",
+    "finished_at": "2026-09-08T01:00:00.000Z"
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 1
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "shokunin-gate-seal/v1",
+  "gateId": "G2_CORE_RUNTIME_INTEGRATED",
+  "verdict": "PASS",
+  "sealedZone": "ZB2",
+  "sourceCommit": "22cf54a47a4134deadd373b02281c04b8726861b",
+  "sealedAt": "2026-09-12T21:10:00Z",
+  "integrationOwner": "codex",
+  "userAuthorizedIntegrationWindow": true,
+  "independentReview": {
+    "actor": "buffy",
+    "model": "mimo-v2.5",
+    "verdict": "PASS"
+  },
+  "evidence": {
+    "canonicalCommand": "pnpm test",
+    "canonicalExitCode": 0,
+    "core": { "passed": 17, "failed": 0, "skipped": 0 },
+    "benchmarkKit": { "passed": 116, "failed": 0, "skipped": 0 },
+    "containerRuntime": "podman 5.7.0",
+    "realHostWitness": "PASS",
+    "bridgeSha256": "ed8172c5324d825a7787682234fed7c5ec5ec08c7b7a0693ef78f066bc712305",
+    "podmanLauncherSha256": "03181cef92cfe7427fa8823cd931f630cf50e0260c91172a057751730347e705",
+    "ownedResidualCount": 0
+  },
+  "reviewProcessCorrection": {
+    "path": "/tmp/harbor-real-host-gate-DEJ6G6",
+    "classification": "INTERRUPTED_NOT_COMPLETED_EVIDENCE",
+    "observed": [
+      "bridge job finished_at was null",
+      "session ledger contained STARTED only",
+      "host-trials.ndjson was absent"
+    ],
+    "cleanup": "REMOVED_BEFORE_SEAL"
+  },
+  "migration": "H1_RUNTIME_MIGRATION_REVIEW.json",
+  "unlocks": ["H1_RUNTIME_MIGRATION_RESEALED"],
+  "doesNotUnlock": ["REAL_H1_PILOT"]
+}

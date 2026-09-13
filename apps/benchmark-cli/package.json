@@ -1,0 +1,9 @@
+{
+  "name": "@shokunin/benchmark-cli",
+  "version": "0.0.1",
+  "private": true,
+  "bin": { "shokunin-benchmark": "./dist/src/index.js" },
+  "type": "module",
+  "scripts": { "build": "tsc -p tsconfig.json --noEmit false --outDir dist", "typecheck": "tsc -p tsconfig.json --noEmit", "test": "pnpm build && node --test dist/tests/*.test.js" },
+  "dependencies": { "@shokunin/evals": "workspace:*", "@shokunin/benchmark-kit": "workspace:*" }
+}

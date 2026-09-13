@@ -1,0 +1,13 @@
+{
+  "id": "malformed-negative-tokens",
+  "task_name": "oracle-task",
+  "agent_result": {
+    "n_input_tokens": -50,
+    "n_output_tokens": 10
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 1
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "shokunin-benchmark-hook-adapters/v1",
+  "version": "1.0.0",
+  "clients": {
+    "claude-code": [
+      { "nativeEvent": "SessionStart", "canonicalEvent": "repo:session-open", "matcher": "startup|resume|clear|compact" },
+      { "nativeEvent": "PreToolUse", "canonicalEvent": "repo:pre-action", "matcher": "Bash|Write|Edit|MultiEdit|NotebookEdit|apply_patch" },
+      { "nativeEvent": "PostToolUse", "canonicalEvent": "repo:post-action", "matcher": "Bash|Write|Edit|MultiEdit|NotebookEdit|apply_patch" },
+      { "nativeEvent": "Stop", "canonicalEvent": "repo:zone-seal", "matcher": "" },
+      { "nativeEvent": "SessionEnd", "canonicalEvent": "repo:session-end", "matcher": "" }
+    ],
+    "gemini": [
+      { "nativeEvent": "SessionStart", "canonicalEvent": "repo:session-open", "matcher": "startup|resume|clear" },
+      { "nativeEvent": "BeforeTool", "canonicalEvent": "repo:pre-action", "matcher": "write_file|replace|run_shell_command" },
+      { "nativeEvent": "AfterTool", "canonicalEvent": "repo:post-action", "matcher": "write_file|replace|run_shell_command" },
+      { "nativeEvent": "SessionEnd", "canonicalEvent": "repo:session-end", "matcher": "" }
+    ],
+    "codex": [
+      { "nativeEvent": "PreToolUse", "canonicalEvent": "repo:pre-action", "matcher": "Bash|apply_patch|Edit|Write" },
+      { "nativeEvent": "PostToolUse", "canonicalEvent": "repo:post-action", "matcher": "Bash|apply_patch|Edit|Write" }
+    ]
+  },
+  "capabilityGaps": {
+    "codex": ["SessionStart/Stop dispatch is not treated as verified by ZB0"],
+    "gemini": ["No native zone-seal route is declared until a verified event is selected"]
+  }
+}

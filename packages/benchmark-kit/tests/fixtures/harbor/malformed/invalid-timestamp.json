@@ -1,0 +1,13 @@
+{
+  "id": "malformed-invalid-timestamp",
+  "task_name": "oracle-task",
+  "agent_execution": {
+    "started_at": "not-a-timestamp",
+    "finished_at": "also-not-a-timestamp"
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 1
+    }
+  }
+}

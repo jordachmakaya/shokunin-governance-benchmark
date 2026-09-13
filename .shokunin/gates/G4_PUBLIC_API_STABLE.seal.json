@@ -1,0 +1,21 @@
+{
+  "$schema": "shokunin-gate-seal/v1",
+  "gateId": "G4_PUBLIC_API_STABLE",
+  "verdict": "PASS",
+  "sealedZone": "ZB6_PUBLIC_API",
+  "sealedAt": "2026-09-12T21:10:00Z",
+  "integrationOwner": "codex",
+  "reviewer": "agy",
+  "reviewedCommit": "d1676178fe001e3b47d07c759032ff93c435ef3a",
+  "reviewArtifact": ".shokunin/gates/G4_PUBLIC_API_REVIEW.json",
+  "reviewArtifactSha256": "3944efee95789739cb1698e7b3c8bc3d8ec6094457e42615f09c532e570ce553",
+  "bundlePath": ".shokunin/gates/G4_PUBLIC_API_REVIEW.json",
+  "bundleSha256": "3944efee95789739cb1698e7b3c8bc3d8ec6094457e42615f09c532e570ce553",
+  "evidence": {
+    "cliApi": "PASS",
+    "typecheck": "PASS",
+    "datasetIntegrity": "PASS",
+    "redteamVerdict": "PASS"
+  },
+  "doesNotUnlock": ["REAL_H1_PILOT", "A3_RUNTIME_QUALIFICATION"]
+}

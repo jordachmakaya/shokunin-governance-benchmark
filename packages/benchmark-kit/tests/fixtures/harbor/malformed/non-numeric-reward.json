@@ -1,0 +1,9 @@
+{
+  "id": "malformed-non-numeric",
+  "task_name": "oracle-task",
+  "verifier_result": {
+    "rewards": {
+      "reward": "PASS_STRING_INVALID"
+    }
+  }
+}

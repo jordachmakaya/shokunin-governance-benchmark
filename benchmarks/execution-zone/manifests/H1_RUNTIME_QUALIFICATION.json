@@ -1,0 +1,33 @@
+{
+  "$schema": "shokunin-h1-runtime-qualification/v1",
+  "status": "PASS",
+  "a3Eligible": true,
+  "probeKind": "NON_PILOT_CAPABILITY_ONLY",
+  "runtime": {
+    "runtimeId": "codex",
+    "runtimeVersion": "0.154.0",
+    "model": "openai/gpt-5-mini",
+    "nativeStopSignal": "clean-agent-return",
+    "claimExtractionMethod": "bridge claim.json from awaited native clean return",
+    "sessionResumeSupported": true,
+    "structuredFeedbackSupported": true,
+    "usageTelemetrySupported": true,
+    "trajectoryFormat": "Harbor Codex trajectory.json",
+    "adapterVersion": "1.0.0-r8.3"
+  },
+  "capabilities": [
+    { "capability": "stop-signal", "status": "VERIFIED", "evidenceId": "qualification-pass-3a1505a479d6" },
+    { "capability": "claim-extraction", "status": "VERIFIED", "evidenceId": "qualification-pass-3a1505a479d6" },
+    { "capability": "controlled-resume", "status": "VERIFIED", "evidenceId": "qualification-pass-3a1505a479d6" },
+    { "capability": "structured-feedback", "status": "VERIFIED", "evidenceId": "qualification-pass-3a1505a479d6" },
+    { "capability": "usage-telemetry", "status": "VERIFIED", "evidenceId": "qualification-pass-3a1505a479d6" },
+    { "capability": "trajectory-preservation", "status": "VERIFIED", "evidenceId": "qualification-pass-3a1505a479d6" }
+  ],
+  "evidence": [
+    {
+      "id": "qualification-pass-3a1505a479d6",
+      "path": "benchmarks/execution-zone/manifests/qualification/H1_RUNTIME_QUALIFICATION_RECEIPT.json",
+      "sha256": "ce1e340b3e3abbf69b60e158f6c2491dc9efd8eb99e34be7f60d57617a65d200"
+    }
+  ]
+}

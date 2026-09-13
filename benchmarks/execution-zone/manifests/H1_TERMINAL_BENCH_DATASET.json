@@ -1,0 +1,21 @@
+{
+  "$schema": "shokunin-h1-dataset-manifest/v1",
+  "datasetRef": "terminal-bench/terminal-bench-2-1@6",
+  "source": "https://hub.harborframework.com/datasets/terminal-bench/terminal-bench-2-1/6",
+  "materializedRoot": "benchmarks/execution-zone/datasets/terminal-bench-2-1",
+  "materializedBytesSha256": "2d2b96c58e9f994ba2394129067700b284056149a34c5f443903f195defb48e0",
+  "materializedFileCount": 83,
+  "digestAlgorithm": "sha256(JSON.stringify(sorted([repositoryRelativePath, sha256(fileBytes)])))",
+  "tasks": [
+    {"id":"cancel-async-tasks","digest":"4374fc66b85d9df65253ef467e9a40da3af90e226e33c4ba86d69feb112761e9","files":8},
+    {"id":"configure-git-webserver","digest":"a4cc458f0937b9127c23aae5a7785d4a53cca7816b6177fa94ab59b766193255","files":8},
+    {"id":"db-wal-recovery","digest":"016ac35ed51495b8b7c0adbbfc4e794a646bbb43b28f06075ed2968ecfb98cf3","files":9},
+    {"id":"fix-code-vulnerability","digest":"05354c39f4df3db2600a5b3f3448843a4ba9fee2e58f13401366290cf7735c09","files":7},
+    {"id":"git-leak-recovery","digest":"20682fabe28196a700e34902c4ec5b5a5432f96b41bf9ab0e70790e7d5c8eb21","files":8},
+    {"id":"git-multibranch","digest":"07fc94a816a470977dd3919daded66a1760b44c8d49dc59ec18c4a1b4bc13302","files":8},
+    {"id":"large-scale-text-editing","digest":"bf11198878cd0ab7b98e551877239ff46ec71f7e3235abab9026934ad1361b7c","files":11},
+    {"id":"pypi-server","digest":"615996f8327f1131e04c3aee0d4bdc0cf82d993450aff4957c710be6e33d39b7","files":7},
+    {"id":"query-optimize","digest":"7a86479119b1526753df9dd655350753be8925039a42ab8335a86d03c52c4c2a","files":9},
+    {"id":"sqlite-db-truncate","digest":"c2b6d92e6f8cfd7fc8f1c836cdd6fcc928f5781f38dd9829269b1c6e9eb2b990","files":8}
+  ]
+}

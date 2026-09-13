@@ -1,0 +1,25 @@
+{
+  "$schema": "shokunin-gate-seal/v1",
+  "gateId": "G3_EVAL_PIPELINE_STABLE",
+  "verdict": "PASS",
+  "sealedZone": "ZB3_EVALS",
+  "sealedAt": "2026-09-12T21:10:00Z",
+  "integrationOwner": "codex",
+  "reviewer": "agy",
+  "reviewedCommit": "d1676178fe001e3b47d07c759032ff93c435ef3a",
+  "reviewArtifact": ".shokunin/gates/G3_EVAL_PIPELINE_REVIEW.json",
+  "reviewArtifactSha256": "a87171c2e9d71662d9c7defccbc68579339f2050a30b01bf0b84a022b216bbbd",
+  "bundlePath": ".shokunin/gates/G3_EVAL_PIPELINE_REVIEW.json",
+  "bundleSha256": "a87171c2e9d71662d9c7defccbc68579339f2050a30b01bf0b84a022b216bbbd",
+  "evidence": {
+    "fullSuite": "PASS",
+    "evalTests": "41 PASS",
+    "cliTests": "5 PASS",
+    "typecheck": "PASS",
+    "diffCheck": "PASS",
+    "redteamVerdict": "PASS"
+  },
+  "contract": "IEvalsEngine is substitutable for frozen ZB2 trial contracts",
+  "statistics": "paired task-clustered BCa, 10000 resamples, deterministic seed",
+  "doesNotUnlock": ["REAL_H1_PILOT"]
+}

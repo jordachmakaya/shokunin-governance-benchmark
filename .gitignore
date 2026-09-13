@@ -1,0 +1,36 @@
+node_modules/
+.pnpm-store/
+.env
+.env.*
+!.env.example
+.envrc
+*.pem
+*.key
+*.p12
+*.pfx
+**/secrets/
+**/*credentials*
+**/*api-key*
+**/*apikey*
+dist/
+coverage/
+*.log
+.DS_Store
+.idea/
+.vscode/
+skills/
+.shokunin/run/*
+!.shokunin/run/.gitkeep
+
+# Private Shokunin implementation snapshots must never enter the public repo.
+# Existing tracked copies require an explicit index/history cleanup before push.
+benchmarks/execution-zone/source-snapshots/
+
+# Local Harbor execution state: transcripts, trajectories, container exports,
+# ledgers and per-trial receipts can contain prompts, paths or credentials.
+benchmarks/execution-zone/raw-results/*
+benchmarks/execution-zone/normalized-results/*
+benchmarks/execution-zone/reports/*
+benchmarks/execution-zone/**/transcripts/
+benchmarks/execution-zone/**/trajectories/
+benchmarks/execution-zone/**/workspace-snapshot/

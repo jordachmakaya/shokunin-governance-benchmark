@@ -1,0 +1,20 @@
+{
+  "$schema": "shokunin-z5-redteam-review/v1",
+  "verdict": "PASS",
+  "reviewedCommit": "c7c79491e4dac3fed04cc986ba1b7893fa4e28d0",
+  "reviewer": "z5_final_redteam",
+  "scope": ["Z5_COPY_RECEIPT_R2.json", "Z5_COVERAGE_AUDIT.md", "source-snapshots/z5/**"],
+  "checks": {
+    "commitContainsOnlyCustodyFiles": true,
+    "entries": 23,
+    "destinationHashesVerified": 23,
+    "sourceHashesVerified": 23,
+    "allowlistCoverage": "PASS",
+    "bundleHash": "e4e02fbf56d356bef71564263b72b7da0bd14810e69c04e4e0b6f83c6a2f922a",
+    "license": "ISC",
+    "controllerPlaneExcluded": true,
+    "claimBoundaryHonest": true
+  },
+  "custodyCommit": "28da85f87eff1493a275bfa45b506a3cf34c3dff",
+  "note": "Independent red-team verification; source commit object is not required because source and bundle bytes were rehashed directly."
+}

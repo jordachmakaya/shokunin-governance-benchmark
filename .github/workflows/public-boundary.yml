@@ -1,0 +1,34 @@
+name: Public boundary
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reject private paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          forbidden='(^|/)(source-snapshots|transcripts|trajectories|workspace-snapshot)(/|$)|(^|/)skills(/|$)'
+          if git ls-files | grep -E "$forbidden"; then
+            echo 'Forbidden private path is tracked.' >&2
+            exit 1
+          fi
+      - name: Reject obvious credential material
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git grep -n -I -E '(BEGIN (RSA|EC|OPENSSH) PRIVATE KEY|AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9_]{20,})' -- ':!pnpm-lock.yaml'; then
+            echo 'Potential credential material found in tracked text.' >&2
+            exit 1
+          fi

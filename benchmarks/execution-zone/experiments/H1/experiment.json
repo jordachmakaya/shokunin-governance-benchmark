@@ -1,0 +1,76 @@
+{
+  "$schema": "shokunin-h1-experiment/v1",
+  "experimentId": "H1-completion-verification-001",
+  "hypothesisId": "H1_COMPLETION_GATE",
+  "campaignId": "H1-pilot-001",
+  "status": "PREREGISTERED",
+  "benchmark": { "name": "terminal-bench", "version": "2.1.0", "datasetRef": "terminal-bench/terminal-bench-2-1@6", "datasetSource": "https://hub.harborframework.com/datasets/terminal-bench/terminal-bench-2-1/6", "datasetPath": "benchmarks/execution-zone/manifests/H1_TERMINAL_BENCH_DATASET.json", "datasetDigest": "6c659f644a4a5104203af50aa4283e9ced177544cbb37dfdeee41092fe0c7721", "comparisonPolicy": "Compare only identical task IDs and versions; cross-benchmark comparisons require an independently published matching task and are otherwise omitted.", "comparisonAnchors": ["Harbor Hub terminal-bench/terminal-bench-2-1 leaderboard"] },
+  "design": {
+    "tasks": 10,
+    "arms": 4,
+    "repetitionsPerTaskArm": 2,
+    "plannedTrials": 80,
+    "replacementTrialsSeparate": true,
+    "pairingKey": ["campaignId", "task.id", "repetitionIndex", "execution.runtimeId", "execution.runtimeVersion", "execution.model"]
+  },
+  "taskSelection": {
+    "status": "FROZEN",
+    "requiredBeforePilot": true,
+    "manifestPath": "benchmarks/execution-zone/manifests/H1_TASK_SELECTION.json",
+    "manifestSha256": "d5e752467cbf9894190ba7d384ec3e381af0c35734134493e8f3307efa2757bf",
+    "officialTaskIds": ["cancel-async-tasks", "configure-git-webserver", "db-wal-recovery", "fix-code-vulnerability", "git-leak-recovery", "git-multibranch", "large-scale-text-editing", "pypi-server", "query-optimize", "sqlite-db-truncate"],
+    "rule": "Exactly ten official Terminal-Bench task IDs must be committed and hashed before H1 launch; null hash is fail-closed."
+  },
+  "runtimeQualification": {
+    "status": "PASS",
+    "a3Eligible": true,
+    "evidencePath": "benchmarks/execution-zone/manifests/H1_RUNTIME_QUALIFICATION.json",
+    "evidenceSha256": "a2cd7690c9504e5d203fde134052d85f325134d65a249459b6fa4ed2baa359cb",
+    "requiredEvidence": ["controlled-resume", "structured-feedback", "stop-signal", "claim-extraction", "usage-telemetry", "trajectory-preservation"],
+    "rule": "A3 trials cannot launch until runtime qualification is PASS; otherwise the pilot launch gate fails closed."
+  },
+  "runtime": {
+    "runtimeId": "codex",
+    "runtimeVersion": "0.154.0",
+    "model": "openai/gpt-5-mini",
+    "nodeVersion": "v24.16.0",
+    "harborWheelSha256": "1478347edbfcc1ced2122815a67392dada4a40d715972a2e5a280858d457b7a5",
+    "bridgeVersion": "1.0.0-r8.3",
+    "bridgeSha256": "db2c4477d8460715375fc8ca2d89301e9f8b766e3ad948faae1399d65f9e5bed",
+    "codeManifestPath": "benchmarks/execution-zone/manifests/H1_RUNTIME_CODE.json",
+    "codeManifestSha256": "4fb460267200c88a99d26349994ad3cb2725513400647ffd24340b90b06c2962",
+    "containerDigests": {
+      "cancel-async-tasks": "sha256:760c5426807dc80edd6a1b1c3675c197599fc3f9cb46b1a06e7539cb94818553",
+      "configure-git-webserver": "sha256:ec4bd4a5223850005caf80b223cbd98adb8999dbc5326786169d7998db53b65f",
+      "db-wal-recovery": "sha256:0ff6d2977f94533d8a7a0cdc5a16efd42cb3ccfeb2f5684cdc8db0836b43b9e3",
+      "fix-code-vulnerability": "sha256:fe9be33bb13823b31284102c8b366e3fc83f5e84cedbba42d2540081c2d9899a",
+      "git-leak-recovery": "sha256:ac4c027aef4e069789e75e13a1b03b9cecb5f42faef5c828cac183d25ba08fe2",
+      "git-multibranch": "sha256:ec6eeb02cecf35faf5badd75646ab0dd2e02cab484638b413ccd4606a2e2ef7d",
+      "large-scale-text-editing": "sha256:4ca0b429596fd62b9fab0a787e276ee7ee3faf2761b56473232327218c462c56",
+      "pypi-server": "sha256:14bdb79aabffeb5b4635c42038a4eb7de3f4935f49d0bcd53dd9e726b1d6d1b2",
+      "query-optimize": "sha256:5654e241057913a0f1a234583c62e12ed7bfab560d9c3f0dc5da985d9f3514eb",
+      "sqlite-db-truncate": "sha256:33e71d5cd2768815d8c822af32020cd12ff3b0c35f4609dbd65523d8ee98d358"
+    },
+    "requiredBeforePilot": true
+  },
+  "arms": {
+    "A0_baseline": { "gate": "none", "blocking": false, "recovery": false },
+    "A1_observing": { "gate": "passive", "blocking": false, "recovery": false },
+    "A2_blocking": { "gate": "active", "blocking": true, "recovery": false },
+    "A3_recovering": { "gate": "active", "blocking": true, "recovery": true, "maxAttempts": 3 }
+  },
+  "analysis": {
+    "bootstrap": { "method": "paired-task-clustered-bca", "resamples": 10000, "seed": "H1-pilot-001-seed-v1", "alternative": "two-sided" },
+    "primary": ["nativeVerifierSuccessRate", "falseCompletionTerminalRate"],
+    "secondary": ["costUsd", "durationMs", "attrition", "recoverySuccessful"]
+  },
+  "executionPolicy": {
+    "a0NoGateEvaluation": true,
+    "a1PassiveNoRetry": true,
+    "a2BlockNoRetry": true,
+    "a3MaxRetries": 3,
+    "a3TimeoutMultiplier": 4,
+    "nativeVerifierRemainsAuthority": true,
+    "noRealPilotBeforeG4": true
+  }
+}

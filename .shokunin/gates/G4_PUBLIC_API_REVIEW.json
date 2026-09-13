@@ -1,0 +1,20 @@
+{
+  "$schema": "shokunin-g4-redteam-review/v1",
+  "verdict": "PASS",
+  "reviewer": "agy",
+  "reviewedCommit": "d167617",
+  "checks": {
+    "cliApi": "PASS",
+    "pathAndSymlinkConfinement": "PASS",
+    "atomicResultWrites": "PASS",
+    "sealIdentityAndHashes": "PASS",
+    "executorNonceProvenance": "PASS",
+    "datasetMaterializationAndDigests": "PASS",
+    "typecheck": "PASS",
+    "diffCheck": "PASS",
+    "runtimeQualification": "PASS",
+    "runtimeCodeManifest": "PASS"
+  },
+  "scope": "G4_PUBLIC_API_STABLE only; runtime qualification and REAL_H1_PILOT remain separate prerequisites.",
+  "doesNotUnlock": ["REAL_H1_PILOT"]
+}

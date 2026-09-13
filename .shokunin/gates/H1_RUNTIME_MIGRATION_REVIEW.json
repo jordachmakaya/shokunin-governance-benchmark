@@ -1,0 +1,27 @@
+{
+  "$schema": "shokunin-h1-runtime-migration-review/v1",
+  "verdict": "PASS",
+  "reviewer": "agy",
+  "scope": "bounded read-only review of H1 migration commit d167617",
+  "independentReview": {
+    "verdict": "PASS",
+    "blockers": 0,
+    "high": 0,
+    "medium": 1,
+    "mediumDisposition": "dist artifacts are intentionally ignored and fail closed when hashes drift; manifest regeneration is required after rebuild"
+  },
+  "evidence": {
+    "rootSuite": "PASS",
+    "hooks": "14/14",
+    "core": "17/17",
+    "benchmarkKit": "116/116",
+    "evals": "41/41",
+    "cli": "5/5",
+    "executor": "5/5",
+    "realContainerHostWitness": "PASS",
+    "runtimeQualification": "PASS_CAPABILITY_ONLY",
+    "diffCheck": "PASS"
+  },
+  "scientificFinding": "recoverySuccessful is false when gate converges but terminal Harbor verifier fails; exhausted A3 attempts remain in the recovery denominator",
+  "pilotUnlock": "NOT_GRANTED"
+}

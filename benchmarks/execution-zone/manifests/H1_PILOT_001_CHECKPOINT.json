@@ -1,0 +1,36 @@
+{
+  "$schema": "shokunin-h1-pilot-checkpoint/v1",
+  "campaignId": "H1-pilot-001",
+  "status": "PAUSED_INCOMPLETE",
+  "capturedAt": "2026-09-13T03:11:24.079Z",
+  "plannedTrials": 80,
+  "completedTrialRecords": 55,
+  "remainingTrials": 25,
+  "provisionalCounts": {
+    "harborPass": 13,
+    "harborFail": 19,
+    "gateBlock": 31,
+    "falseBlock": 4,
+    "falsePass": 3
+  },
+  "lastFailure": {
+    "trialId": "H1-pilot-001-query-optimize-A3_recovering-r1-7b0e276ce4f4",
+    "phase": "session",
+    "classification": "TRIAL_FAILED"
+  },
+  "rawReceipts": [
+    {
+      "path": "benchmarks/execution-zone/raw-results/H1-pilot-001-trials.json.progress",
+      "sha256": "367609d92a9cca45967ff3bf44b04738aab0432f773c192ae9536bbaf569c169"
+    },
+    {
+      "path": "benchmarks/execution-zone/raw-results/executor-trials.ndjson",
+      "sha256": "8ec2c23211c74613cb7f952fb0b717b0865da363dda88fe573d126e907172ded"
+    },
+    {
+      "path": "benchmarks/execution-zone/raw-results/session-ledger.jsonl",
+      "sha256": "8748506e39dc2ec827e461139135e96e580c0de5af33d8bd038281b460200fe2"
+    }
+  ],
+  "publicationEligibility": "NOT_ELIGIBLE_UNTIL_80_TRIALS_AND_AUDIT"
+}
