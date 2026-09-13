@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "@shokunin/benchmark-kit": "workspace:*",
-    "zod": "4.1.5"
+    "zod": "4.6.1"
   }
 }
