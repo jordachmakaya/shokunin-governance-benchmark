@@ -12,7 +12,7 @@
     "hooks:test": "node --test .shokunin/hooks/tests/*.test.mjs",
     "hooks:materialize:check": "node .shokunin/scripts/hook-materializers/materialize-hooks.mjs --check",
     "hooks:materialize": "node .shokunin/scripts/hook-materializers/materialize-hooks.mjs --apply",
-    "pretypecheck": "pnpm --filter @shokunin/core build",
+    "pretypecheck": "pnpm --filter @shokunin/core build && pnpm --filter @shokunin/benchmark-kit build",
     "typecheck": "tsc --noEmit",
     "test:core": "pnpm --filter @shokunin/core test",
     "test:benchmark-kit": "pnpm --filter @shokunin/benchmark-kit test",

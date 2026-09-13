@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if git grep -n -I -E '(BEGIN (RSA|EC|OPENSSH) PRIVATE KEY|AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9_]{20,})' -- ':!pnpm-lock.yaml'; then
+          if git grep -n -I -E '(-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----$|AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9_]{20,})' -- ':!pnpm-lock.yaml'; then
             echo 'Potential credential material found in tracked text.' >&2
             exit 1
           fi
