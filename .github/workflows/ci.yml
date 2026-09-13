@@ -25,4 +25,11 @@ jobs:
         with:
           version: "latest"
       - run: pnpm install --frozen-lockfile
-      - run: pnpm test
+      # Live Harbor round-trips require a privileged Docker/Podman daemon and
+      # are executed by the benchmark pilot environment, not a standard runner.
+      - run: pnpm foundation:check
+      - run: pnpm hooks:test
+      - run: pnpm typecheck
+      - run: pnpm test:core
+      - run: pnpm test:evals
+      - run: pnpm test:cli
